@@ -54,6 +54,7 @@ import SupportIcon from './icons/IconSupport.vue'
     <a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">Awesome Vue</a>
     a visit.
   </WelcomeItem>
+  
 
   <WelcomeItem>
     <template #icon>
