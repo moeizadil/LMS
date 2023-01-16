@@ -1,0 +1,208 @@
+<template>
+ <el-form-item label="Select Agreement Type " prop="resource">
+      <el-radio-group v-model="ruleForm.resource">
+        <el-radio label="Sponsorship" />
+        <el-radio label="Venue" />
+      </el-radio-group>
+    </el-form-item>
+    <br>
+
+<table>
+   <tr >
+
+    <br>
+    <td style="width: 1000px;">
+    <el-form-item label="Requesting Branch Code" prop="bcode">
+      <el-select v-model="ruleForm.RequestingBranchCode" placeholder="Requesting Branch Code">
+        <el-option label="1035" value="1035" />
+        <el-option label="1037" value="1037" />
+        <el-option label="1001" value="1001" />
+      </el-select>
+    </el-form-item>
+
+    <br>
+
+    <el-form-item label="Branch Manager" prop="BranchManager">
+      <el-input v-model="ruleForm.BranchManager" />
+    </el-form-item>
+
+    <br>
+
+    <el-form-item label="Agreement/Tranch Request Date" required>
+     
+        <el-form-item prop="requestdate">
+          <el-date-picker
+            v-model="ruleForm.requestdate"
+            type="date"
+            label="Pick a date"
+            placeholder="Pick a date"
+            style="width: 100%"
+          />
+        </el-form-item>
+    </el-form-item>
+
+    <br>
+
+    <el-form-item label="Lease Agreement No" prop="LeaseAggrementNo">
+      <el-input v-model="ruleForm.LeaseAgreementNo" />
+    </el-form-item>
+
+    <br>
+
+    <el-form-item label="Agreement/Tranch Request Date" required>
+     
+     <el-form-item prop="Lesse Applcation Date">
+       <el-date-picker
+         v-model="ruleForm.lesseapplicationdate"
+         type="date"
+         label="Pick a date"
+         placeholder="Pick a date"
+         style="width: 100%"
+       />
+     </el-form-item>
+ </el-form-item>
+
+ <br>
+
+ <el-form-item label="Lessee Name" prop="LesseeName">
+      <el-select v-model="ruleForm.LesseeName" placeholder="Lessee Name">
+        <el-option label="ABC" value="ABC" />
+        <el-option label="XYZ" value="XYZ" />
+        
+      </el-select>
+    </el-form-item>
+
+    <br>
+    <el-form-item label="Lessee Contact No" prop="LesseeContactNo">
+      <el-input v-model="ruleForm.LesseeContactNo" />
+    </el-form-item>
+
+</td>
+
+<td style="">
+
+        <el-form-item label="Master Lease Agreement No" prop="MasterLeaseAgreementNo">
+      <el-select v-model="ruleForm.MasterLeaseAgreementNo" placeholder="MasterLeaseAgreementNo">
+        <el-option label="1" value="1" />
+        <el-option label="2" value="2" />
+        
+      </el-select>
+    </el-form-item>
+
+    <br>
+    <el-form-item label="Master Agreement Date" prop="MasterAgreementDate">
+      <el-input v-model="ruleForm.MasterAgreementDate" />
+    </el-form-item>
+
+    <br>
+    <el-form-item label="MasterAgreementLimit" prop="MasterAgreementLimit">
+      <el-input v-model="ruleForm.MasterAgreementLimit" />
+    </el-form-item>
+    
+    <br>
+    <el-form-item label="AvailableLimit " prop="AvailableLimit">
+      <el-input v-model="ruleForm.AvailableLimit" />
+    </el-form-item>
+
+    <br>
+    <el-form-item label="TotalTranchesDisbursed" prop="TotalTranchesDisbursed">
+      <el-input v-model="ruleForm.TotalTranchesDisbursed" />
+    </el-form-item>
+
+
+    <br>
+    <el-form-item label="BranchName" prop="BranchName">
+      <el-input v-model="ruleForm.BranchName" />
+    </el-form-item>
+
+    <br>
+    <el-form-item label="BrContactPerson" prop="BrContactPerson">
+      <el-input v-model="ruleForm.BrContactPerson" />
+    </el-form-item>
+
+    <br>
+    <el-form-item label="BrContactPersonNo" prop="BrContactPersonNo">
+      <el-input v-model="ruleForm.BrContactPersonNo" />
+    </el-form-item>
+
+    <br>
+
+    <el-form-item label="RequestRevisedDate" required>
+     
+     <el-form-item prop=" RequestRevisedDate ">
+       <el-date-picker
+         v-model="ruleForm.RequestRevisedDate"
+         type="date"
+         label="Pick a date"
+         placeholder="Pick a date"
+         style="width: 100%"
+       />
+     </el-form-item>
+ </el-form-item>
+
+    <br>
+    <el-form-item label="DocumentSendDate" required>
+     
+     <el-form-item prop=" DocumentSendDate ">
+       <el-date-picker
+         v-model="ruleForm.DocumentSendDate"
+         type="date"
+         label="Pick a date"
+         placeholder="Pick a date"
+         style="width: 100%"
+       />
+     </el-form-item>
+ </el-form-item>
+
+
+
+</td>
+
+ </tr>
+</table>
+
+</template>
+<script  lang="ts" setup>
+import { reactive, ref } from 'vue'
+import type { FormInstance, FormRules } from 'element-plus'
+const ruleFormRef = ref<FormInstance>()
+const ruleForm = reactive({
+
+  resource: '',
+  RequestingBranchCode:'',
+  BranchManager:'',
+  requestdate: '',
+  LeaseAgreementNo:'',
+  lesseapplicationdate:'',
+  LesseeName:'',
+  LesseeContactNo:'',
+  MasterLeaseAgreementNo:'',
+  MasterAgreementDate:'',
+  MasterAgreementLimit:'',
+  AvailableLimit:'',
+  TotalTranchesDisbursed:'',
+  BranchName:'',
+  BrContactPerson:'',
+  BrContactPersonNo:'',
+  RequestRevisedDate:'',
+  DocumentSendDate:''
+
+})
+</script>
+<style scoped>
+
+.el-row {
+  margin-bottom: 20px;
+}
+.el-row:last-child {
+  margin-bottom: 0;
+}
+.el-col {
+  border-radius: 4px;
+}
+
+.grid-content {
+  border-radius: 4px;
+  min-height: 36px;
+}
+</style>
